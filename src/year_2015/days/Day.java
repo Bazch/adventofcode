@@ -6,9 +6,9 @@ import java.nio.file.Paths;
 
 public interface Day {
 
-	void execute();
+	void execute(boolean isDebug);
 
-	default public String readFileToString(String filePath) {
+	default public String readFile(String filePath) {
 		String output = "";
 
 		try {

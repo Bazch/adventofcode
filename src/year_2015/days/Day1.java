@@ -4,10 +4,20 @@ public class Day1 implements Day {
 
 	private int up;
 	private int down;
-	private String input = readFileToString(FILE_PATH);
-	private static final String FILE_PATH = "/Users/bvdboomg/personal/adventofcode/resources/Day1.txt";
+	private String input;
+	private static final String FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day1.txt";
+	private static final String FILE_PATH_DEBUG = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day1_test.txt";
 	
-	public String calculateFloor() {
+	public void readInput(boolean isDebug){
+		if (isDebug) {
+			input = readFile(FILE_PATH_DEBUG);
+		} else
+		{
+			input = readFile(FILE_PATH);
+		}
+	}
+	
+	public int calculateFloor() {
 		up = 0;
 		down = 0;
 		int result = 0;
@@ -19,11 +29,10 @@ public class Day1 implements Day {
 			}
 		}
 		result = up - down;
-		System.out.println(up + " - " + down + " = " + result);
-		return "calculateFloor = " + result;
+		return result;
 	}
 
-	public String calculatePosition() {
+	public int calculatePosition() {
 		up = 0;
 		down = 0;
 		int result = 0;
@@ -35,18 +44,18 @@ public class Day1 implements Day {
 			}
 			int firstIndexNegative = up - down;
 			if (firstIndexNegative == -1) {
-				System.out.println(i + 1);
-				return "First Index = " + (i + 1);
+				return (i+1);
 			}
 		}
 
-		return "First Index = not calculated";
+		return result;
 	}
 
 	@Override
-	public void execute() {
-		System.out.println(calculateFloor());
-		System.out.println(calculatePosition());
+	public void execute(boolean isDebug) {
+		readInput(isDebug);
+		System.out.println("Part 1: " + calculateFloor());
+		System.out.println("Part 2: " + calculatePosition());
 	}
 
 }

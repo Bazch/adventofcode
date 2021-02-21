@@ -8,58 +8,56 @@ import java.util.List;
 
 public class Day2 implements Day {
 
-	private String input = readFileToString(FILE_PATH);
-	private static final String FILE_PATH = "/Users/bvdboomg/personal/adventofcode/resources/Day2.txt";
+	private static final String FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day2.txt";
+	private static final String FILE_PATH_DEBUG= "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day2_test.txt";
+	private String inputRaw;
+	private String[] input;
+	private int l;
+	private int w;
+	private int h;
 
 
-	public String[] splitInput(String in) {
-		String[] array = in.split("\n");
-		return array;
+	public void splitInput(boolean isDebug) {
+		if (isDebug) {
+			inputRaw = readFile(FILE_PATH_DEBUG);
+		} else
+		{
+			inputRaw = readFile(FILE_PATH);
+		}
+		input = inputRaw.split("\\s+");
 	}
 
 	public int calculateWrapping() {
-		int l = 0;
-		int w = 0;
-		int h = 0;
-		int smallest = 0;
 		int total = 0;
-		String[] array = input.split("\n");
-		for (int i = 0; i < array.length; i++) {
-			String[] array2 = array[i].split("x");
+		for (int i = 0; i < input.length; i++) {
+			String[] array2 = input[i].split("x");
 			l = Integer.parseInt(array2[0]);
 			w = Integer.parseInt(array2[1]);
 			h = Integer.parseInt(array2[2]);
 			List<Integer> newArray = new ArrayList<Integer>(Arrays.asList(l*w,w*h,h*l));
 			Collections.sort(newArray);
-			smallest = newArray.get(0);
-
-			System.out.println("Total: " + total + " + (2 * " + l + " * " + w + " ) + (2 * " + w + " * " + h + ") + (2 * " + h + " * " + l + ") + " + smallest);
+			int smallest = newArray.get(0);
 			total += (((2 * l * w) + (2 * w * h) + (2 * h * l)) + smallest);
-			System.out.println(i);
 		}
 
 		return total;
 	}
 
 	public int calculateRibbon() {
-		int l = 0;
-		int w = 0;
-		int h = 0;
-		int smallest = 0;
 		int total = 0;
-		String[] array = input.split("\n");
-		for (int i = 0; i < array.length; i++) {
-			String[] array2 = array[i].split("x");
+		for (int i = 0; i < input.length; i++) {
+			String[] array2 = input[i].split("x");
 			l = Integer.parseInt(array2[0]);
 			w = Integer.parseInt(array2[1]);
 			h = Integer.parseInt(array2[2]);
-			List<Integer> newArray = new ArrayList<Integer>(Arrays.asList(l*w,w*h,h*l));
+			List<Integer> newArray = new ArrayList<Integer>(Arrays.asList(l,w,h));
 			Collections.sort(newArray);
-			smallest = newArray.get(0);
+			int smallest1 = newArray.get(0);
+			int smallest2 = newArray.get(1);
 
-			System.out.println("Total: " + total + " + (2 * " + l + " * " + w + " ) + (2 * " + w + " * " + h + ") + (2 * " + h + " * " + l + ") + " + smallest);
-			total += (((2 * l * w) + (2 * w * h) + (2 * h * l)) + smallest);
-			System.out.println(i);
+			
+			total += 2*smallest1 + 2*smallest2 + l*w*h;
+	
 		}
 
 		return total;
@@ -67,8 +65,9 @@ public class Day2 implements Day {
 
 	
 	@Override
-	public void execute() {
-
-		System.out.println(calculateWrapping());
+	public void execute(boolean isDebug) {
+		splitInput(isDebug);
+		System.out.println("Part 1:" + calculateWrapping());
+		System.out.println("Part 2:" + calculateRibbon());
 	}
 }

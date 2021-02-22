@@ -10,7 +10,7 @@ public class Execute {
 
 	private static final int CURRENT_DAY = 4;
 	private static boolean DEBUG = true;
-	private static boolean HOME = false;
+	private static boolean HOME = true;
 	private static Day day;
 	
 	public static void main(String[] args) {

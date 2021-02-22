@@ -31,7 +31,7 @@ public abstract class AbstractDay implements Day{
 		}
 	}
 	
-	public String readFile(String filePath) {
+	private String readFile(String filePath) {
 		String output = "";
 
 		try {

@@ -8,6 +8,5 @@ public interface Day {
 
 	void execute(boolean isDebug, boolean isHome);
 
-	public String readFile(String filePath);
 
 }

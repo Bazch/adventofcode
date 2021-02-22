@@ -4,11 +4,12 @@ import year_2015.days.Day;
 import year_2015.days.Day1;
 import year_2015.days.Day2;
 import year_2015.days.Day3;
+import year_2015.days.Day4;
 
 public class Execute {
 
-	private static final int CURRENT_DAY = 3;
-	private static boolean DEBUG = false;
+	private static final int CURRENT_DAY = 4;
+	private static boolean DEBUG = true;
 	private static boolean HOME = false;
 	private static Day day;
 	
@@ -23,6 +24,9 @@ public class Execute {
 				break;
 			case 3:
 				day = new Day3();
+				break;
+			case 4:
+				day = new Day4();
 				break;
 		}
 		

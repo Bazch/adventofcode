@@ -1,21 +1,10 @@
 package year_2015.days;
 
-public class Day1 implements Day {
+public class Day1 extends AbstractDay {
 
 	private int up;
 	private int down;
-	private String input;
-	private static final String FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day1.txt";
-	private static final String FILE_PATH_DEBUG = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day1_test.txt";
-	
-	public void readInput(boolean isDebug){
-		if (isDebug) {
-			input = readFile(FILE_PATH_DEBUG);
-		} else
-		{
-			input = readFile(FILE_PATH);
-		}
-	}
+
 	
 	public int calculateFloor() {
 		up = 0;
@@ -52,8 +41,8 @@ public class Day1 implements Day {
 	}
 
 	@Override
-	public void execute(boolean isDebug) {
-		readInput(isDebug);
+	public void execute(boolean isDebug, boolean isHome) {
+		readInput(isDebug, isHome);
 		System.out.println("Part 1: " + calculateFloor());
 		System.out.println("Part 2: " + calculatePosition());
 	}

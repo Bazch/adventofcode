@@ -6,31 +6,17 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Day2 implements Day {
+public class Day2 extends AbstractDay {
 
-	private static final String FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day2.txt";
-	private static final String FILE_PATH_DEBUG= "C:\\Users\\basv_\\git\\adventofcode\\resources\\Day2_test.txt";
-	private String inputRaw;
-	private String[] input;
+	private String[] splitInput;
 	private int l;
 	private int w;
 	private int h;
 
-
-	public void splitInput(boolean isDebug) {
-		if (isDebug) {
-			inputRaw = readFile(FILE_PATH_DEBUG);
-		} else
-		{
-			inputRaw = readFile(FILE_PATH);
-		}
-		input = inputRaw.split("\\s+");
-	}
-
 	public int calculateWrapping() {
 		int total = 0;
-		for (int i = 0; i < input.length; i++) {
-			String[] array2 = input[i].split("x");
+		for (int i = 0; i < splitInput.length; i++) {
+			String[] array2 = splitInput[i].split("x");
 			l = Integer.parseInt(array2[0]);
 			w = Integer.parseInt(array2[1]);
 			h = Integer.parseInt(array2[2]);
@@ -44,9 +30,10 @@ public class Day2 implements Day {
 	}
 
 	public int calculateRibbon() {
+		
 		int total = 0;
-		for (int i = 0; i < input.length; i++) {
-			String[] array2 = input[i].split("x");
+		for (int i = 0; i < splitInput.length; i++) {
+			String[] array2 = splitInput[i].split("x");
 			l = Integer.parseInt(array2[0]);
 			w = Integer.parseInt(array2[1]);
 			h = Integer.parseInt(array2[2]);
@@ -65,9 +52,10 @@ public class Day2 implements Day {
 
 	
 	@Override
-	public void execute(boolean isDebug) {
-		splitInput(isDebug);
-		System.out.println("Part 1:" + calculateWrapping());
-		System.out.println("Part 2:" + calculateRibbon());
+	public void execute(boolean isDebug, boolean isHome) {
+		readInput(isDebug, isHome);	
+		splitInput = input.split("\\s+");
+		System.out.println("Part 1: " + calculateWrapping());
+		System.out.println("Part 2: " + calculateRibbon());
 	}
 }

@@ -9,6 +9,7 @@ public class Execute {
 
 	private static final int CURRENT_DAY = 3;
 	private static boolean DEBUG = false;
+	private static boolean HOME = false;
 	private static Day day;
 	
 	public static void main(String[] args) {
@@ -25,6 +26,6 @@ public class Execute {
 				break;
 		}
 		
-		day.execute(DEBUG);
+		day.execute(DEBUG, HOME);
 	}
 }

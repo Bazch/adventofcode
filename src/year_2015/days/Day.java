@@ -6,17 +6,8 @@ import java.nio.file.Paths;
 
 public interface Day {
 
-	void execute(boolean isDebug);
+	void execute(boolean isDebug, boolean isHome);
 
-	default public String readFile(String filePath) {
-		String output = "";
-
-		try {
-			output = new String(Files.readAllBytes(Paths.get(filePath)));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return output;
-	}
+	public String readFile(String filePath);
 
 }

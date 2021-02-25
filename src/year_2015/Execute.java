@@ -5,6 +5,7 @@ import year_2015.days.Day1;
 import year_2015.days.Day2;
 import year_2015.days.Day3;
 import year_2015.days.Day4;
+import year_2015.days.Day5;
 
 public class Execute {
 
@@ -28,6 +29,9 @@ public class Execute {
 			case 4:
 				day = new Day4();
 				break;
+			case 5:
+				day = new Day5();
+			
 		}
 		
 		day.execute(DEBUG, HOME);

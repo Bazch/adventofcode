@@ -2,3 +2,28 @@
 .classpath
 *.prefs
 .project
+# Default ignored files
+/shelf/
+*/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# IntelliJ specifics
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+
+
+# Maven auto-import stuff
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr

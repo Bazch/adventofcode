@@ -1,6 +1,6 @@
 package year_2015;
 
-import year_2015.days.Day;
+import templates.Day;
 import year_2015.days.Day1;
 import year_2015.days.Day2;
 import year_2015.days.Day3;

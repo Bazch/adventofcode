@@ -1,10 +1,12 @@
 package year_2015.days;
 
+import templates.Day;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public abstract class AbstractDay implements Day{
+public abstract class AbstractDay implements Day {
 
 	protected static String FILE_PATH;
 	protected static String FILE_PATH_DEBUG;
@@ -12,14 +14,14 @@ public abstract class AbstractDay implements Day{
 	
 	public void readInput(boolean isDebug, boolean isHome){		
 		if(isHome) {
-			FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\"
+			FILE_PATH = "C:\\Users\\basv_\\git\\adventofcode\\resources\\2015\\"
 					+ this.getClass().getSimpleName() + ".txt";
-			FILE_PATH_DEBUG = "C:\\Users\\basv_\\git\\adventofcode\\resources\\"
+			FILE_PATH_DEBUG = "C:\\Users\\basv_\\git\\adventofcode\\resources\\2015\\"
 					+ this.getClass().getSimpleName() + "_test.txt";
 		} else {
-			FILE_PATH = "/Users/bvdboomg/personal/adventofcode/resources/"
+			FILE_PATH = "/Users/bvdboomg/personal/adventofcode/resources/2015/"
 					+ this.getClass().getSimpleName() + ".txt";
-			FILE_PATH_DEBUG = "/Users/bvdboomg/personal/adventofcode/resources/"
+			FILE_PATH_DEBUG = "/Users/bvdboomg/personal/adventofcode/resources/2015/"
 					+ this.getClass().getSimpleName() + "_test.txt";
 		}
 		

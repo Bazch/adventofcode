@@ -1,4 +1,4 @@
-package year_2015.days;
+package templates;
 
 import java.io.IOException;
 import java.nio.file.Files;

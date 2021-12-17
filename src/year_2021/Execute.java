@@ -3,6 +3,7 @@ package year_2021;
 import templates.Day;
 import year_2021.days.Day1;
 import year_2021.days.Day2;
+import year_2021.days.Day3;
 
 public class Execute {
 
@@ -19,6 +20,9 @@ public class Execute {
                 break;
             case 2:
                 day = new Day2();
+                break;
+            case 3:
+                day = new Day3();
                 break;
         }
         day.execute(DEBUG, HOME);
